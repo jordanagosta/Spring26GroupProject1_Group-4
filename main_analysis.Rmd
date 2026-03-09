@@ -1,0 +1,43 @@
+---
+title: "main analysis"
+output: html_document
+date: "2026-03-08"
+---
+
+```{r}
+library(dplyr)
+library(skimr)
+library(ggplot2)
+```
+
+## Load Data
+```{r}
+data <-read.csv("HINTSdata_2020_clean.csv")
+```
+
+## Descriptive Statistics 
+```{r}
+summary(data)
+```
+##Five Number Summary
+
+```{r}
+fivenum(data$Age,AvgDrinksPerWeek,WeeklyMinutesModerateExercise,BMI)
+```
+##Mean, Variance, and Standard Deviation
+
+```{r}
+mean(data$Age,AvgDrinksPerWeek,WeeklyMinutesModerateExercise,BMI,na.rm=TRUE)
+var(data$Age,AvgDrinksPerWeek,WeeklyMinutesModerateExercise,BMI,na.rm=TRUE)
+sd(data$Age,AvgDrinksPerWeek,WeeklyMinutesModerateExercise,BMI,na.rm=TRUE)
+```
+## SKim Summary of Numeric Variables
+
+```{r}
+library(skimr)
+skim(numeric_data)
+```
+
+##Conclusion
+The descriptive statistics provide an overview of the distribution of the numeric variables in the HINTS data set. 
+
